@@ -1,5 +1,7 @@
 package com.codewithonyedikachi;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
 	
 	private class Node {
@@ -57,9 +59,35 @@ public class LinkedList {
 	}
 	
 	public void removeFirst() {
+		if (isEmpty()) 
+			throw new NoSuchElementException();
+		if (first == last) {
+			first = last = null;
+			return;
+		}
 		var second = first.next;
 		first.next = null;
 		first = second;
+	}
+	
+	public void removeLast() {
+		if (isEmpty()) throw new NoSuchElementException();
+		if (first == last) {
+			 first = last = null;
+			 return;
+		}
+		var previouse = getPreviouse(last);
+		last = previouse;
+		last.next = null;
+	}
+	
+	private Node getPreviouse(Node node) {
+		var current = first;
+		while (current != null) {
+			if (current.next == node) return current;
+			current = current.next;
+		}
+		return null;
 	}
 	
 }
