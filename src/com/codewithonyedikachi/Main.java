@@ -1,15 +1,14 @@
 package com.codewithonyedikachi;
+import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
-		Array numbers = new Array(3);
-		numbers.insert(10);
-		numbers.insert(20);
-		numbers.insert(30);
-		numbers.insert(40);
-		numbers.insert(50);
-		numbers.insert(60);
-		System.out.println(numbers.indexOf(50));
-		numbers.print();
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.remove(0);
+		
+		System.out.println(list.toArray());
 	}
 }
