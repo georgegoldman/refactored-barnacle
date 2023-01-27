@@ -10,6 +10,7 @@ public class Main {
 		numbers.insert(40);
 		numbers.insert(50);
 		numbers.insert(60);
+		System.out.println(numbers.indexOf(50));
 		numbers.print();
 	}
 }
