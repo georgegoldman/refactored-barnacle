@@ -56,4 +56,10 @@ public class LinkedList {
 		return indexOf(item) != -1;
 	}
 	
+	public void removeFirst() {
+		var second = first.next;
+		first.next = null;
+		first = second;
+	}
+	
 }
